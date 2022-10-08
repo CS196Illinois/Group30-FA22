@@ -6,3 +6,5 @@ Group Name: TEAM_NAME
 Team Members: jtw8, toberai2, kinshuk3, jehyeok2, xm24
 
 Project Manager: yse2
+
+Project Description: Physics Environment Obstacle Course with Training Bot
