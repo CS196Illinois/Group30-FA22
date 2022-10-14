@@ -1,5 +1,5 @@
 # Group 30
-Group Name: TEAM_NAME
+Group Name: Obstacle Course
 
 [MVP Link](https://docs.google.com/document/d/1oUWZG370qyY72iWkLe9jCzsMtI1vHqmtWwecTD7sWrU/edit?usp=sharing)
 
