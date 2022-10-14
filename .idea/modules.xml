@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Group30-FA22.iml" filepath="$PROJECT_DIR$/.idea/modules/Group30-FA22.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/Group30-FA22.android.iml" filepath="$PROJECT_DIR$/.idea/modules/android/Group30-FA22.android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/Group30-FA22.android.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/android/Group30-FA22.android.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/Group30-FA22.android.main.iml" filepath="$PROJECT_DIR$/.idea/modules/android/Group30-FA22.android.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/Group30-FA22.android.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/android/Group30-FA22.android.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Group30-FA22.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Group30-FA22.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Group30-FA22.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Group30-FA22.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/Group30-FA22.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/Group30-FA22.core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/Group30-FA22.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/Group30-FA22.desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/Group30-FA22.desktop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/Group30-FA22.desktop.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/Group30-FA22.desktop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/Group30-FA22.desktop.test.iml" />
+    </modules>
+  </component>
+</project>
