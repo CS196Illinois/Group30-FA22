@@ -1,7 +1,11 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -24,9 +28,9 @@ public class MyGdxGame extends ApplicationAdapter {
 	PolygonShape groundBox;
 	BodyDef bodyDef;
 	Body body;
-	CircleShape circle;
-	FixtureDef fixtureDef;
-	Fixture fixture;
+	Texture charImage;
+	SpriteBatch batch;
+	Body hitbox;
 
 	@Override
 	public void create () {
@@ -45,21 +49,46 @@ public class MyGdxGame extends ApplicationAdapter {
 		bodyDef.type = BodyType.DynamicBody;
 		bodyDef.position.set(300, 400);
 		body = world.createBody(bodyDef);
-		circle = new CircleShape();
-		circle.setRadius(6f);
-		fixtureDef = new FixtureDef();
-		fixtureDef.shape = circle;
-		fixtureDef.density = 0.5f;
-		fixtureDef.friction = 0.4f;
-		fixtureDef.restitution = 0.6f;
-		fixture = body.createFixture(fixtureDef);
+		// add in sprites
+		charImage = new Texture(Gdx.files.internal("a.png"));
+		batch = new SpriteBatch();
+		//create hitbox for sprite
+		hitbox = createBox(100, 100, 20, 20, false);
+
 	}
 
+	public Body createBox(int x, int y, int width, int height, boolean isStatic) {
+		Body pBody;
+		BodyDef def = new BodyDef();
+
+		if(isStatic)
+			def.type = BodyDef.BodyType.StaticBody;
+		else
+			def.type = BodyDef.BodyType.DynamicBody;
+
+		def.position.set(x, y);
+		def.fixedRotation = true;
+		pBody = world.createBody(def);
+
+		PolygonShape shape = new PolygonShape();
+		shape.setAsBox(width / 2, height / 2);
+
+		pBody.createFixture(shape, 1.0f);
+		shape.dispose();
+		return pBody;
+	}
 
 	@Override
 	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
-		debugRenderer.render(world, camera.combined);
+		ScreenUtils.clear(1, 0, 1, 1);
+		camera.update();
+		batch.setProjectionMatrix(camera.combined);
+
+		batch.begin();
+		// render sprites, make sprite follow the hitbox that has the physics added
+		batch.draw(charImage, hitbox.getPosition().x, hitbox.getPosition().y);
+
+		batch.end();
 		world.step(1/10f, 6, 2);
 	}
 	
@@ -67,6 +96,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void dispose () {
 		world.dispose();
 		groundBox.dispose();
-		circle.dispose();
+		batch.dispose();
 	}
 }
