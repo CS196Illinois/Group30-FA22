@@ -1,22 +1,16 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.BodyDef.*;
 import com.badlogic.gdx.physics.box2d.Box2D;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.CircleShape;
-import com.badlogic.gdx.physics.box2d.Fixture;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.ScreenUtils;
-import com.mygdx.game.bodyWorks.BodyWorks;
 import com.mygdx.game.bodyWorks.bodyPlayer.BodyPlayer;
 
 public class MyGdxGame extends ApplicationAdapter {
@@ -31,8 +25,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	BodyDef boxy;
 	Body groundBoxy;
 	PolygonShape boxyShape;
-	float prevPositionx = 0;
-	float prevPositiony = 0;
 
 
 	@Override
@@ -69,8 +61,6 @@ public class MyGdxGame extends ApplicationAdapter {
 		player.inputWorks();
 		player.bodyWorker();
 		world.step(1/10f, 6, 2);
-		prevPositionx = player.body.getPosition().x;
-		prevPositiony = player.body.getPosition().y;
 	}
 	
 	@Override
