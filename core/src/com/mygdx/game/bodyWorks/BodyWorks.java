@@ -23,6 +23,7 @@ public class BodyWorks {
         bodyDef.type = bodyType;
         bodyDef.position.set(bodyOrigin);
         bodyDef.fixedRotation = true;
+        bodyDef.allowSleep = false;
         body = MyGdxGame.world.createBody(bodyDef);
         circle = new CircleShape();
         circle.setRadius(radius);
@@ -32,6 +33,7 @@ public class BodyWorks {
         fixtureDef.friction = friction;
         fixtureDef.restitution = restitution;
         fixture = body.createFixture(fixtureDef);
+
     }
 
     public void bodyWorker(){
