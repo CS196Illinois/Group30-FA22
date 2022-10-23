@@ -15,13 +15,14 @@ public class BodyWorks {
     BodyDef bodyDef;
     public Body body;
     CircleShape circle;
-    FixtureDef fixtureDef;
+    public FixtureDef fixtureDef;
     Fixture fixture;
 
     public BodyWorks(BodyDef.BodyType bodyType, Vector2 bodyOrigin, long radius, float density, float friction, float restitution){
         bodyDef = new BodyDef();
         bodyDef.type = bodyType;
         bodyDef.position.set(bodyOrigin);
+        bodyDef.fixedRotation = true;
         body = MyGdxGame.world.createBody(bodyDef);
         circle = new CircleShape();
         circle.setRadius(radius);

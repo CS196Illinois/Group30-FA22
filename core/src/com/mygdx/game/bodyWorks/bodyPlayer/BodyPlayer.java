@@ -10,7 +10,7 @@ public class BodyPlayer extends BodyWorks {
 
 
     public BodyPlayer() {
-        super(BodyDef.BodyType.DynamicBody,new Vector2(100, 200), 3, 0.05f,0.1f, 0.6f);
+        super(BodyDef.BodyType.DynamicBody,new Vector2(100, 200), 1/2, 0.15f,0.1f, 0.6f);
     }
 
     public void inputWorks(){
