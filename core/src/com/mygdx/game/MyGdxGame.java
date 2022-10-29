@@ -36,10 +36,12 @@ public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Body hitbox;
 	BodyEditorLoader bodyEditorLoader;
-
+	FjImplementationTest fjTesting;
 
 	@Override
 	public void create () {
+		fjTesting = new FjImplementationTest(4, 2);
+		System.out.println(fjTesting.testImplementation());
 		Box2D.init();
 		world = new World(new Vector2(0, -10), true);
 		debugRenderer = new Box2DDebugRenderer();

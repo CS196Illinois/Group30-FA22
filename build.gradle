@@ -7,6 +7,7 @@ buildscript {
         gradlePluginPortal()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         google()
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.4'
@@ -50,6 +51,9 @@ project(":desktop") {
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         api "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
         api "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+        implementation 'org.functionaljava:functionaljava:5.0'
+        implementation 'org.functionaljava:functionaljava-quickcheck:5.0'
+        implementation 'org.functionaljava:functionaljava-java-core:5.0'
         
     }
 }
@@ -92,6 +96,9 @@ project(":core") {
         api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-ai:$aiVersion"
         api "com.badlogicgames.ashley:ashley:$ashleyVersion"
+        implementation 'org.functionaljava:functionaljava:5.0'
+        implementation 'org.functionaljava:functionaljava-quickcheck:5.0'
+        implementation 'org.functionaljava:functionaljava-java-core:5.0'
         
     }
 }
