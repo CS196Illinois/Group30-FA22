@@ -99,7 +99,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void render () {
 		ScreenUtils.clear(0.2f, 0.5f, 0.5f, 1);
-		camera.translate(player.x, 0);
+		camera.translate((player.body.getPosition().x - camera.position.x)/10, 0);
 		camera.update();
 		player.inputWorks();
 		player.bodyWorker();
