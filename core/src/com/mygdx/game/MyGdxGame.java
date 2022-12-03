@@ -27,6 +27,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	PolygonShape groundBox;
 	CircleShape circle;
 	BodyPlayer player;
+	BodyDef another;
 	BodyDef boxy;
 	Body groundBoxy;
 	PolygonShape boxyShape;
@@ -35,6 +36,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	Texture charImage;
 	SpriteBatch batch;
 	Body hitbox;
+	double anotherx = 200;
+	double anothery = 200;
 	BodyEditorLoader bodyEditorLoader;
 	FjImplementationTest fjTesting;
 
@@ -54,6 +57,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		groundBox.setAsBox(camera.viewportWidth, 10.0f);
 		groundBody.createFixture(groundBox, 0.0f);
 		player = new BodyPlayer();
+		another = new BodyDef();
 		boxy = new BodyDef();
 		boxy.position.set(new Vector2(200, 200));
 		groundBoxy = world.createBody(boxy);
@@ -99,7 +103,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void render () {
 		ScreenUtils.clear(0.2f, 0.5f, 0.5f, 1);
-		camera.translate(player.x, 0);
+		camera.translate(player.x /  5, 0);
 		camera.update();
 		player.inputWorks();
 		player.bodyWorker();
@@ -110,6 +114,20 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch.begin();
 		// render sprites, make sprite follow the hitbox that has the physics added
 		batch.draw(charImage, player.body.getPosition().x, player.body.getPosition().y);
+		batch.draw(charImage, (float) anotherx, (float) anothery);
+
+		if (anotherx < player.body.getPosition().x) {
+			anotherx += 0.5;
+		}
+		if (anotherx > player.body.getPosition().x) {
+			anotherx -= 0.5;
+		}
+		if (anothery > player.body.getPosition().y) {
+			anothery -= 0.5;
+		}
+		if (anothery < player.body.getPosition().y) {
+			anothery += 0.5;
+		}
 
 		batch.end();
 		debugRenderer.render(world, camera.combined);
