@@ -105,7 +105,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void render () {
 		ScreenUtils.clear(0.2f, 0.5f, 0.5f, 1);
-		camera.translate(player.x /  5, 0);
+		camera.translate((player.body.getPosition().x - camera.position.x) /  10, 0);
 		camera.update();
 		player.inputWorks();
 		player.bodyWorker();
@@ -115,9 +115,10 @@ public class MyGdxGame extends ApplicationAdapter {
 
 		batch.begin();
 		// render sprites, make sprite follow the hitbox that has the physics added
+		batch.draw(backgroundImage, 0,0);
 		batch.draw(charImage, player.body.getPosition().x, player.body.getPosition().y);
 		batch.draw(charImage, (float) anotherx, (float) anothery);
-		batch.draw(backgroundImage, 0,0);
+
 
 		if (anotherx < player.body.getPosition().x) {
 			anotherx += 0.5;
