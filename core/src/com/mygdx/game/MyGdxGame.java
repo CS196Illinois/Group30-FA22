@@ -40,6 +40,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	double anothery = 200;
 	BodyEditorLoader bodyEditorLoader;
 	FjImplementationTest fjTesting;
+	private Texture backgroundImage;
 
 	@Override
 	public void create () {
@@ -77,6 +78,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		hitbox = createBox(40, 40, 20, 20, false);
 		bodyEditorLoader = new BodyEditorLoader(Gdx.files.internal("aHitbox"));
 		bodyEditorLoader.attachFixture(player.body, "aHitboxHitbox", player.fixtureDef, 30);
+		backgroundImage = new Texture(Gdx.files.internal("Level1.png"));
 	}
 
 	public Body createBox(int x, int y, int width, int height, boolean isStatic) {
@@ -115,6 +117,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		// render sprites, make sprite follow the hitbox that has the physics added
 		batch.draw(charImage, player.body.getPosition().x, player.body.getPosition().y);
 		batch.draw(charImage, (float) anotherx, (float) anothery);
+		batch.draw(backgroundImage, 0,0);
 
 		if (anotherx < player.body.getPosition().x) {
 			anotherx += 0.5;
