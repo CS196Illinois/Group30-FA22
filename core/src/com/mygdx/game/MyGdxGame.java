@@ -78,7 +78,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		hitbox = createBox(40, 40, 20, 20, false);
 		bodyEditorLoader = new BodyEditorLoader(Gdx.files.internal("aHitbox"));
 		bodyEditorLoader.attachFixture(player.body, "aHitboxHitbox", player.fixtureDef, 30);
-		backgroundImage = new Texture(Gdx.files.internal("Level1.png"));
+		backgroundImage = new Texture(Gdx.files.internal("SmallerLevel.png"));
 	}
 
 	public Body createBox(int x, int y, int width, int height, boolean isStatic) {
